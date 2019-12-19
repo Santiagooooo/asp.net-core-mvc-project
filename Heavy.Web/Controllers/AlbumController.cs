@@ -96,6 +96,7 @@ namespace Heavy.Web.Controllers
         public async Task<ActionResult> Edit(int id, AlbumUpdateViewModel albumUpdateViewModel)
         {
             var model = await _albumService.GetByIdAsync(id);
+
             if (model == null)
             {
                 // return NotFound();
