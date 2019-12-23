@@ -22,8 +22,10 @@ namespace Heavy.Web.ViewModels
         [Display(Name = "邮箱")]
         public string Email { get; set; }
 
+        [Display(Name = "身份证号")]
         public string IdCardNo { get; set; }
 
+        [Display(Name = "出生日期")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
     }

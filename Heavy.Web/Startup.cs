@@ -34,7 +34,16 @@ namespace Heavy.Web
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ApplicationUser>(options =>
+/*            services.AddDefaultIdentity<ApplicationUser>(options =>
+                {
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredLength = 0;
+                })
+                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<ApplicationDbContext>();*/
+            services.AddIdentity<ApplicationUser,IdentityRole>(options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireLowercase = false;

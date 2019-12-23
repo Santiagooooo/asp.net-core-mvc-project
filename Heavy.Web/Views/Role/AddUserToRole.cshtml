@@ -1,0 +1,14 @@
+﻿@model RoleUserViewModel
+@{
+    ViewData["Title"] = "Add User To Role";
+}
+
+<h2>Add User To Role</h2>
+<form asp-action="AddUserToRole" method="post">
+    <input type="hidden" name="roleId" value="@Model.RoleId" />
+    <a>请选择要添加到角色的用户：</a>
+    <select asp-for="UserId" asp-items="@(new SelectList(Model.Users,"Id", "UserName"))">
+        <option>---列表用户---</option>
+    </select>
+    <button type="submit">确认</button>
+</form>
